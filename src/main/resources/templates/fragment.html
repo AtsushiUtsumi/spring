@@ -16,8 +16,9 @@
     <option value="parrot">Parrot</option>
     <option value="spider">Spider</option>
     <option value="goldfish">Goldfish</option>
-    <script>
+    <script type="text/javascript" th:inline="javascript">
         function hoge(){
+            alert(document.getElementById([[${value}]]).value);
             alert(document.getElementById('pullDown').value);
         }
         document.getElementById('pullDown').onchange = hoge;

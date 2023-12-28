@@ -7,7 +7,7 @@
 </head>
 <body>
     このなかでから生成したプルダウンをimportしたい
-    <div th:insert="~{fragment::pullDown2(もみ)}"></div>
+    <div th:insert="~{fragment::pullDown(pullDown)}"></div>
     <div id="hogehoge" th:insert="~{fragment::template1()}"></div>
     <div id="fugafuga" th:insert="~{fragment::template2(せやな)}"></div>
     <div id="置き換えられるのでこのidは飾り" th:replace="~{fragment::template2(IDは飾りですよ)}"></div>
