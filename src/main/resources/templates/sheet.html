@@ -13,12 +13,30 @@
 const myTable = jspreadsheet(document.getElementById('mytable'), {
   data: [
     ['2022/10/24', '文房具', 420],
-    ['2022/10/26', '外食費', 1300]
+    ['2022/10/26', '外食費', -1300]
   ],
   columns: [
     { type: 'calendar', title: '日付', width: 120, options: { format: 'YYYY/MM/DD' } },
     { type: 'text', title: '項目', width: 300 },
     { type: 'numeric', title: '出金', width: 200, mask:'#,##' },
+  ],
+  updateTable: function(instance, cell, col, row, val, label, cellName) {
+    if (col === 2 && parseInt(val) < 0) {
+      cell.style.backgroundColor = 'red';
+    } else {
+      cell.style.backgroundColor = '';
+    }
+  },
+  nestedHeaders: [
+    [
+      { title: 'ヘッダ1', colspan: '2' },
+      { title: 'ヘッダ2', colspan: '1' },
+    ],
+    [
+      { title: '日付' },
+      { title: '項目' },
+      { title: '出金' },
+    ]
   ]
 });
 </script>
