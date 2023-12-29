@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<title>Jspreadsheet Example</title>
+</head>
+<body>
+<div id="mytable"></div>
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css">
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css">
+<script>
+const myTable = jspreadsheet(document.getElementById('mytable'), {
+  data: [
+    ['2022/10/24', '文房具', 420],
+    ['2022/10/26', '外食費', 1300]
+  ],
+  columns: [
+    { type: 'calendar', title: '日付', width: 120, options: { format: 'YYYY/MM/DD' } },
+    { type: 'text', title: '項目', width: 300 },
+    { type: 'numeric', title: '出金', width: 200, mask:'#,##' },
+  ]
+});
+</script>
+</body>
+</html>

@@ -1,12 +1,18 @@
 package com.example.hoge.select;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HelloController {
- @RequestMapping("/")
- public String homeDisp() {
- return "home";
- }
+
+    @GetMapping("/")
+    public String homeDisp() {
+        return "home";
+    }
+
+    @GetMapping("/sheet")
+    public String sheet() {
+        return "sheet";
+    }
 }
