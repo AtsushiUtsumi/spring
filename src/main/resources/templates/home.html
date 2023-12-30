@@ -6,7 +6,16 @@
     <title>フラグメントで皆の役に立ちたい!</title>
 </head>
 <body>
-    このなかでから生成したプルダウンをimportしたい
+    <form action="/" method="post" th:object="${form}" th:with="tableTxpression='*{name}'">
+        <div th:insert="~{sheet::fuga(${tableTxpression}, burn)}" />
+        <p>name</p>
+        <input type="text" id="name" name="name" th:value="*{name}"/>
+        <p>text</p>
+        <input type="text" id="text" name="text" th:value="*{text}"/>
+        <br/>
+        <input type="submit" value="submit"/>
+      </form>
+    <p>このなかでから生成したプルダウンをimportしたい</p>
     <div th:insert="~{fragment::pullDown(pullDown)}"></div>
     <div id="hogehoge" th:insert="~{fragment::template1()}"></div>
     <div id="fugafuga" th:insert="~{fragment::template2(せやな)}"></div>

@@ -6,13 +6,15 @@
 </head>
 
 <body>
-  <div id="mytable"></div>
+  <div th:fragment="fuga(expression, tableId)" th:inline="text">
+  <div th:id="__${tableId}__" />
   <script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
   <script src="https://jsuites.net/v4/jsuites.js"></script>
   <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css">
   <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css">
-  <script>
-    const myTable = jspreadsheet(document.getElementById('mytable'), {
+  <script type="text/javascript">
+    //alert('[[__${expression}__]]');// ここで名前が出て欲しい
+    const myTable = jspreadsheet(document.getElementById('[[__${tableId}__]]'), {
       data: [
         ['現預金', '2022/10/24', '文房具', 420],
         ['長期貸付金', '2022/10/26', '外食費', -1300]
@@ -55,6 +57,7 @@
       ]
     });
   </script>
+  </div>
 </body>
 
 </html>
