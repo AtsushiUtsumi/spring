@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css">
   <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css">
   <script type="text/javascript">
-    //alert('[[__${expression}__]]');// プリレンダリング時に置き換え。ここで名前が出て欲しい
-    alert('[[${tableId}]]');// JSはレンダリング時でいいので「__」で囲う必要がない
+    alert('[[__${expression}__]]');// プリレンダリング時に置き換え。ここで名前が出て欲しい
+    //alert('[[${tableId}]]');// JSはレンダリング時でいいので「__」で囲う必要がない
     const myTable = jspreadsheet(document.getElementById('[[__${tableId}__]]'), {
       data: [
         ['現預金', '2022/10/24', '文房具', 420],

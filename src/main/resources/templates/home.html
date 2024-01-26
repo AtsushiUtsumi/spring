@@ -6,8 +6,8 @@
     <title>フラグメントで皆の役に立ちたい!</title>
 </head>
 <body>
-    <form action="/" method="post" th:object="${form}" th:with="tableTxpression='*{name}'">
-        <div th:insert="~{sheet::fuga(${tableTxpression}, テーブルID)}" />
+    <form action="/" method="post" th:object="${form}" >
+        <div th:insert="~{sheet::fuga('*{name}', テーブルID)}" />
         <p>name</p>
         <input type="text" id="name" name="name" th:value="*{name}"/>
         <p>text</p>
