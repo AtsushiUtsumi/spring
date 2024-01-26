@@ -6,4 +6,5 @@ import lombok.Data;
 public class HelloForm {
     private String name = "AA";
     private String text = "BB";
+    private String dataJson = "";
 }

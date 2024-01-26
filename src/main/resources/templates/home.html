@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="/" method="post" th:object="${form}" th:with="tableTxpression='*{name}'">
-        <div th:insert="~{sheet::fuga(${tableTxpression}, burn)}" />
+        <div th:insert="~{sheet::fuga(${tableTxpression}, テーブルID)}" />
         <p>name</p>
         <input type="text" id="name" name="name" th:value="*{name}"/>
         <p>text</p>
