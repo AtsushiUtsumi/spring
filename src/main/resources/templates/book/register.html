@@ -1,6 +1,6 @@
 <html th:object=${book}>
 
-<body th:replace="book/detail :: body(${book2}, ~{this::searchParams}, ~{this::searchResults})">
+<body th:replace="~{book/detail :: body(${book2}, ~{this::searchParams}, ~{this::searchResults})}">
     <div th:fragment="searchParams">
         <h6>検索条件A</h6>
         <input th:field="*{bookId}">
