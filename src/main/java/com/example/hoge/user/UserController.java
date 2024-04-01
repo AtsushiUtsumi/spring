@@ -26,6 +26,7 @@ public class UserController {
 	public String home() {
 		UserSearchParams params = new UserSearchParams();
 		List<String> res = searchService.search(params, 333);
+		System.err.println(res.size());
 		res = searchService.search(params, 777);
 		final Path filePath = searchService.createCsv(params);
 		return "こんなどうでもいい仕事に時間を使っている場合ではない:" + filePath.toAbsolutePath().toString();
